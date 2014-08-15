@@ -11,8 +11,8 @@ namespace GroundControl.Web.Controllers.Api
         {
             return new []
                    {
-                        new DashboardItemDTO{ Title = "New pages", Contents = "Lorem ipsum" },
-                        new DashboardItemDTO{ Title = "Latest comments", Contents = "Lorem ipsum" }  
+                        new DashboardItemDTO{ Id = 1, Title = "New pages", Contents = "Lorem ipsum" },
+                        new DashboardItemDTO{ Id = 3, Title = "Latest comments", Contents = "Lorem ipsum" }  
                    };
         }
 

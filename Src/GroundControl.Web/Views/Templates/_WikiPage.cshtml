@@ -1,0 +1,18 @@
+﻿
+<div class="col-lg-8"> @*ng-controller="WikiPageController">*@
+    <h1>{{Publication.Title}}</h1>
+
+    <p class="lead">
+        author <a href="#/person/{{Publication.Author}}">{{Publication.Author}}</a>
+    </p>
+    <hr>
+
+    <p><span class="glyphicon glyphicon-time"></span> Published on {{Publication.Date}}</p>
+    <hr>
+
+    <hr>
+    
+    {{Publication.Contents}}
+</div>
+
+@Html.Partial("_SideBar")

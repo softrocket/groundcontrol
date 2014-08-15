@@ -1,10 +1,27 @@
 ﻿
 
-var groundcontrol = angular.module('groundcontrol', []);
+var groundcontrol = angular.module('groundcontrol', [
+    'ngRoute',
+    'gcControllers'
+]);
 
-groundcontrol.controller('DashboardController', function ($scope) {
-    $.getJSON('/api/Dashboard/', function(results) {
-        $scope.dashboarditems = results;
-    });
-});
+groundcontrol.config(['$routeProvider',
+    function ($routeProvider) {
+        $routeProvider.
+            when('/dashboard', {
+                templateUrl: 'dashboard.html',
+                controller: 'DashboardController'
+                }).
+            when('/wiki/:Id', {
+                templateUrl: '/Templates/',
+                controller: 'WikiPageController'
+            }).
+            otherwise({
+                redirectTo: '/dashboard'
+            });
 
+        //.
+        //otherwise({
+        //    redirectTo: '/'
+        //});
+    }]);

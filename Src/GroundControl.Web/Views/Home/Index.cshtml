@@ -1,21 +1,20 @@
 ﻿@{
     ViewBag.Title = "Dashboard";
 }
-@section scripts{
-    <script src="~/Scripts/App/gc.dashboard.js"></script>
-}
+<script type="text/ng-template" id="dashboard.html">
 
-
-
-<div class="col-lg-8" ng-controller="DashboardController">
-    <h1>Welcome to GroundControl</h1>
-    <hr />
-    <div class="well" ng-repeat="item in dashboarditems">
-        <h4>{{item.Title}}</h4>
-        <div>
-            {{item.Contents}}
+    <div class="col-lg-8" ng-controller="DashboardController">
+        <h1>Welcome to GroundControl</h1>
+        <hr />
+        <div class="well" ng-repeat="item in dashboarditems">
+            <h4>{{item.Title}}</h4>
+            <div>
+                {{item.Contents}}
+            </div>
         </div>
+
+        <hr>
     </div>
 
-    <hr>
-</div>
+    @Html.Partial("_SideBar")
+</script>
