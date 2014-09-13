@@ -8,3 +8,34 @@ margin: 50px 0;
 .nav .btn {
     margin-top: 8px;
 }
+
+.panel-title.pull-left {
+    padding-top: 7.5px;
+}
+
+.panel .input-group-addon {
+    color: #555555;
+}
+
+.iconsbox {
+    height: 250px;
+    overflow: auto;
+}
+
+.iconsbox div {
+    height: 120px;
+}
+
+.iconsbox p {
+    font-size: 12px;
+}
+
+.iconsbox a.selected {
+    border-color: #2a6496;
+    color: #2a6496;
+}
+
+.iconsbox a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}

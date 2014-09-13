@@ -1,8 +1,9 @@
 ﻿
-
 var groundcontrol = angular.module('groundcontrol', [
     'ngRoute',
-    'gcControllers'
+    'ui.bootstrap',
+    'gcControllers',
+    'gcServices'
 ]);
 
 groundcontrol.config(['$routeProvider',
@@ -12,7 +13,7 @@ groundcontrol.config(['$routeProvider',
                 templateUrl: 'dashboard.html',
                 controller: 'DashboardController'
                 }).
-            when('/wiki/:Id', {
+            when('/page/:Id', {
                 templateUrl: '/Templates/',
                 controller: 'WikiPageController'
             }).

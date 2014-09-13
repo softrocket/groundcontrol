@@ -9,5 +9,11 @@ namespace GroundControl.Web.Controllers
         {
             return this.PartialView("_WikiPage");
         }
+
+        [HttpGet]
+        public PartialViewResult Modals(string key)
+        {
+            return this.PartialView("_NewPage");
+        }
     }
 }

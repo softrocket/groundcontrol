@@ -1,0 +1,7 @@
+﻿<WebAccess version="11.0">
+    <plugin moreinfo="http://groundcontrol.softrocket.nl/tfs-extension" name="GroundControl TFS Extension" vendor="Softrocket" version="0.0.0.1">
+        <modules>
+            <module loadAfter="TFS.Core" namespace="GroundControl"></module>
+        </modules>
+    </plugin>
+</WebAccess>

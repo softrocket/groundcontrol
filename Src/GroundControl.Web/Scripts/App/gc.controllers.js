@@ -8,16 +8,51 @@ gcControllers.controller('DashboardController', function ($scope, $http) {
     });
 });
 
-gcControllers.controller('NewPageController', function ($scope, $http) {
+gcControllers.controller('MenuController', ['$scope', '$modal',
+    function ($scope, $modal) {
 
-    //$('#myModal').modal('show');
+        $scope.newPage = function () {
 
+            var dialog = $modal.open({
+                templateUrl: '/Templates/Modals/?key=newpage',
+                controller: 'NewPageController',
+                size: 'lg'
+            });
+        };
 
-});
+    }]);
+
+gcControllers.controller('NewPageController', ['$scope', '$modalInstance', 'pageTypesService', 'pagesService',
+   function ($scope, $modalInstance, pageTypesService, pagesService) {
+
+       $scope.Page = new pagesService();
+       $scope.Page.Title = '';
+       
+       $scope.PageTypes = pageTypesService.query(function (pageTypes) {
+           $scope.SelectedPageType = pageTypes[0];
+       });
+
+       $scope.select = function (pageType) {
+           $scope.SelectedPageType = pageType;
+       };
+
+       $scope.create = function () {
+
+           $scope.Page.PageTypeId = $scope.SelectedPageType.Id;
+           pagesService.save($scope.Page, function () {
+               $modalInstance.close();
+           });
+       };
+
+       $scope.close = function () {
+           $modalInstance.dismiss('cancel');
+       };
+   }]);
+
 
 gcControllers.controller('WikiPageController', function ($scope, $http) {
 
-    $scope.Publication = 
+    $scope.Publication =
     {
         'Title': 'Lets get started',
         'Author': 'Christian Jungerius',

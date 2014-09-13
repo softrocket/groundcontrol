@@ -1,0 +1,44 @@
+﻿
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+    </button>
+    <h4 class="modal-title">Add new page</h4>
+</div>
+<div class="modal-body">
+
+    <div role="form">
+        <div class="form-group">
+            <label for="pagetitle">Title</label>
+            <input id="pagetitle" type="text" ng-model="Page.Title" class="form-control" placeholder="title of page" />
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading clearfix">
+            <h3 class="panel-title pull-left">Select page type</h3>
+            <div class="input-group col-xs-6 pull-right">
+                <span class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+                <input type="text" class="form-control" ng-model="filterQuery" />
+            </div>
+
+        </div>
+        <div class="panel-body iconsbox">
+            
+            <div class="col-xs-6 col-md-3" ng-repeat="pageType in PageTypes | filter:filterQuery">
+                <a class="thumbnail" ng-click="select(pageType)" ng-class="{selected: pageType===SelectedPageType}">
+                    <i class="fa fa-cubes fa-5x fa-align-center" title="{{pageType.Name}}"></i>
+                    <p class="text-center">{{pageType.Name}}</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="close()">Close</button>
+    <button type="button" class="btn btn-primary" ng-click="create()">Create</button>
+</div>

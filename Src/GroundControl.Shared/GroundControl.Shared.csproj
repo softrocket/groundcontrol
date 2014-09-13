@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\DashboardItemDTO.cs" />
+    <Compile Include="DTO\PageDTO.cs" />
+    <Compile Include="DTO\PageTypeDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
