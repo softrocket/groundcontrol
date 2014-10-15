@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="groundcontrol">
+<html lang="en" ng-app="GroundControlApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,14 +52,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
+
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Scripts/angular-resource.min.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/Scripts/App/gc.controllers.js"></script>
-    <script src="~/Scripts/App/gc.services.js"></script>
-    <script src="~/Scripts/App/gc.dashboard.js"></script>
-    <script src="~/Scripts/App/gc.bootstrap.js"></script>
+
+    @Scripts.Render("~/bundles/groundcontrol")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

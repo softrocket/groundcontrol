@@ -8,6 +8,14 @@ namespace GroundControl.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/groundcontrol").Include(
+                        "~/Scripts/App/AppStart.js",        
+                        "~/Scripts/App/Models/*.js",
+                        "~/Scripts/App/Services/*.js",
+                        "~/Scripts/App/Controllers/*.js",
+                        "~/Scripts/App/Infrastructure/*.js",
+                        "~/Scripts/App/Bootstrapper.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -29,7 +37,7 @@ namespace GroundControl.Web
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

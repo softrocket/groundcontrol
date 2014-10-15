@@ -13,7 +13,7 @@ groundcontrol.config(['$routeProvider',
                 templateUrl: 'dashboard.html',
                 controller: 'DashboardController'
                 }).
-            when('/page/:Id', {
+            when('/page/:pageId', {
                 templateUrl: '/Templates/',
                 controller: 'WikiPageController'
             }).

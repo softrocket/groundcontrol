@@ -22,8 +22,8 @@ gcControllers.controller('MenuController', ['$scope', '$modal',
 
     }]);
 
-gcControllers.controller('NewPageController', ['$scope', '$modalInstance', 'pageTypesService', 'pagesService',
-   function ($scope, $modalInstance, pageTypesService, pagesService) {
+gcControllers.controller('NewPageController', ['$scope', '$modalInstance', '$location', 'pageTypesService', 'pagesService',
+   function ($scope, $modalInstance, $location, pageTypesService, pagesService) {
 
        $scope.Page = new pagesService();
        $scope.Page.Title = '';
@@ -38,9 +38,10 @@ gcControllers.controller('NewPageController', ['$scope', '$modalInstance', 'page
 
        $scope.create = function () {
 
-           $scope.Page.PageTypeId = $scope.SelectedPageType.Id;
-           pagesService.save($scope.Page, function () {
+           $scope.Page.PageTypeId = $scope.SelectedPageType.id;
+           pagesService.save($scope.Page, function (savedPage) {
                $modalInstance.close();
+               $location.path("/page/" + savedPage.Id);
            });
        };
 
@@ -50,17 +51,9 @@ gcControllers.controller('NewPageController', ['$scope', '$modalInstance', 'page
    }]);
 
 
-gcControllers.controller('WikiPageController', function ($scope, $http) {
+gcControllers.controller('WikiPageController', function ($scope, $routeParams, pagesService) {
 
-    $scope.Publication =
-    {
-        'Title': 'Lets get started',
-        'Author': 'Christian Jungerius',
-        'Date': 'August 24, 2013 at 9:00 PM',
-        'Contents': '<p>asdfsdf</p>'
-    };
+    $scope.Publication = pagesService.get({ id: $routeParams.pageId }, function (details) {
+    });
 
-    //$scope.PublicationDate = [{
-    //     'Contents' : '<p>asdfsdf</p>'
-    //}];
 });
