@@ -2,10 +2,6 @@
 
 module GroundControl.Controllers {
 
-    export interface IAppScope extends ng.IScope {
-        newPage(): void;
-    }
-
     export class MenuController {
 
         public static $inject = [
@@ -13,10 +9,10 @@ module GroundControl.Controllers {
             '$modal'
         ];
 
-        private scope: IAppScope;
+        private scope: ViewModels.IMenuViewModel;
         private modal: ng.ui.bootstrap.IModalService;
         
-        constructor($scope: IAppScope, $modal: ng.ui.bootstrap.IModalService) {
+        constructor($scope: ViewModels.IMenuViewModel, $modal: ng.ui.bootstrap.IModalService) {
 
             this.scope = $scope;
             this.modal = $modal;

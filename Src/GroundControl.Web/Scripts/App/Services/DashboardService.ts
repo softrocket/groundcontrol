@@ -14,16 +14,16 @@ module GroundControl.Services {
         ];
 
         resource: ng.resource.IResourceService;
-        repository: Repositories.IDashboardRepository;
+        api: Api.IDashboardApi;
 
         constructor($resource: ng.resource.IResourceService) {
             this.resource = $resource;
-            this.repository = <Repositories.IDashboardRepository> this.resource('/api/Dashboard/:id', null, {});
+            this.api = <Api.IDashboardApi> this.resource('/api/Dashboard/:id', null, {});
 
         }
 
         getWidgets() {
-            var res = this.repository.query();
+            var res = this.api.query();
 
             return res;
         }

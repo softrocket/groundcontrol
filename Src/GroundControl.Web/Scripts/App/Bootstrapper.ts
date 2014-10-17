@@ -6,12 +6,22 @@
 /// <reference path="AppStart.ts" />
 /// <reference path="Infrastructure/RoutesConfig.ts" /> 
 
+/// <reference path="ViewModels/INewPageViewModel.ts" />
+/// <reference path="ViewModels/IDashboardViewModel.ts" />
+/// <reference path="ViewModels/IMenuViewModel.ts" />
+
 /// <reference path="Controllers/DashboardController.ts" />
 /// <reference path="Controllers/MenuController.ts" />
+/// <reference path="Controllers/NewPageController.ts" />
 
 /// <reference path="Models/IDashboardItem.ts" />
 /// <reference path="Models/IPageType.ts" />
+/// <reference path="Models/IPage.ts" />
 
 /// <reference path="Services/DashboardService.ts" />
 /// <reference path="Services/PageTypesService.ts" />
 /// <reference path="Services/PagesService.ts" />
+
+/// <reference path="Api/DashboardApi.ts" />
+/// <reference path="Api/PageTypesApi.ts" />
+/// <reference path="Api/PagesApi.ts" />

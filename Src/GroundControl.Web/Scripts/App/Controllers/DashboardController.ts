@@ -2,10 +2,6 @@
 
 module GroundControl.Controllers {
 
-   export interface IAppScope extends ng.IScope {
-        dashboardItems: Array<Models.IDashboardItem>;
-    }
-
     export class DashboardController {
 
         public static $inject = [
@@ -13,11 +9,21 @@ module GroundControl.Controllers {
             'dashboardService'
         ];
 
-        constructor($scope: IAppScope, dashboardService: Services.IDashboardService) {
+        private dashboardService: Services.IDashboardService;
+        private viewModel: ViewModels.IDashboardViewModel;
 
-            var widgets = dashboardService.getWidgets();
+        constructor($scope: ViewModels.IDashboardViewModel, dashboardService: Services.IDashboardService) {
 
-            $scope.dashboardItems = widgets;
+            this.dashboardService = dashboardService;
+            this.viewModel = $scope;
+
+            this.index();
+        }
+
+        public index(): void {
+
+            var widgets = this.dashboardService.getWidgets();
+            this.viewModel.dashboardItems = widgets;
         }
     }
 

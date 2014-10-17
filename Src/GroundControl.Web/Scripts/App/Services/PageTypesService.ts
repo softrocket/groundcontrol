@@ -4,27 +4,23 @@ module GroundControl.Services {
 
     export interface IPageTypeService {
 
-        getAll(): Array<Models.IPageType>;
-    }
-
-
-    export interface IPageTypeRepository extends ng.resource.IResourceClass<Models.IPageType> {
+        getAll(callback: () => void): Array<Models.IPageType>;
     }
 
     export class PageTypesService implements IPageTypeService {
 
         resource: ng.resource.IResourceService;
-        repository: IPageTypeRepository;
+        api: Api.IPageTypeApi;
 
         constructor($resource: ng.resource.IResourceService) {
             this.resource = $resource;
-            this.repository = <IPageTypeRepository> this.resource('/api/PageType/:id', null, {});
+            this.api = <Api.IPageTypeApi> this.resource('/api/PageType/:id', null, {});
 
         }
 
-        getAll() {
+        getAll(callback: () => void) {
 
-            return this.repository.query();
+            return this.api.query(() => callback());
 
             //return $resource('/api/PageType', {}, {
             //    query: { method: 'GET', isArray: true }

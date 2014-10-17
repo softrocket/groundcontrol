@@ -192,7 +192,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\DashboardController.cs" />
-    <Compile Include="Controllers\Api\WikiPagesController.cs" />
+    <Compile Include="Controllers\Api\WikiPageController.cs" />
     <Compile Include="Controllers\Api\PageTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TemplatesController.cs" />
@@ -614,11 +614,17 @@
     <TypeScriptCompile Include="Scripts\App\Controllers\DashboardController.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\MenuController.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\IDashboardItem.ts" />
+    <TypeScriptCompile Include="Scripts\App\Models\IPage.ts" />
     <TypeScriptCompile Include="Scripts\App\Models\IPageType.ts" />
-    <TypeScriptCompile Include="Scripts\App\Repositories\DashboardRepository.ts" />
+    <TypeScriptCompile Include="Scripts\App\Api\PagesApi.ts" />
+    <TypeScriptCompile Include="Scripts\App\Api\DashboardApi.ts" />
+    <TypeScriptCompile Include="Scripts\App\Api\PageTypesApi.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\DashboardService.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\PagesService.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\PageTypesService.ts" />
+    <TypeScriptCompile Include="Scripts\App\ViewModels\IDashboardViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\App\ViewModels\IMenuViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\App\ViewModels\INewPageViewModel.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-bootstrap\angular-ui-bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
