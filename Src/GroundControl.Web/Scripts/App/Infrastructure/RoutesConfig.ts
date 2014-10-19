@@ -1,4 +1,5 @@
 ﻿/// <reference path="../Bootstrapper.ts" />
+
 module GroundControl.Infrastructure {
 
     export class RoutesConfig {
@@ -16,7 +17,7 @@ module GroundControl.Infrastructure {
                 }).
                 when('/page/:pageId', {
                     templateUrl: '/Templates/',
-                    controller: 'DashboardController'
+                    controller: 'WikiPageController'
                 }).
                 otherwise({
                     redirectTo: '/dashboard'

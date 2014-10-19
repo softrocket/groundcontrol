@@ -4,11 +4,7 @@
 /// <reference path="../typings/angular-ui-bootstrap/angular-ui-bootstrap.d.ts" /> 
 
 /// <reference path="AppStart.ts" />
-/// <reference path="Infrastructure/RoutesConfig.ts" /> 
-
-/// <reference path="ViewModels/INewPageViewModel.ts" />
-/// <reference path="ViewModels/IDashboardViewModel.ts" />
-/// <reference path="ViewModels/IMenuViewModel.ts" />
+/// <reference path="Infrastructure/RoutesConfig.ts" />
 
 /// <reference path="Controllers/DashboardController.ts" />
 /// <reference path="Controllers/MenuController.ts" />

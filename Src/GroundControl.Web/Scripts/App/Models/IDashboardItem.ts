@@ -2,10 +2,10 @@
 
 module GroundControl.Models {
 
-    export interface IDashboardItem extends ng.resource.IResource<IDashboardItem> {
+    export interface IDashboardItem {
 
-        id: number;
-        title: string;
+        Id: number;
+        Title: string;
         contents: string;
     }
 }

@@ -238,9 +238,6 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\App\bak\gc.bootstrap.js" />
-    <Content Include="Scripts\App\bak\gc.dashboard.js" />
-    <Content Include="Scripts\App\bak\gc.controllers.js" />
-    <Content Include="Scripts\App\bak\gc.services.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\errors.json" />
@@ -581,7 +578,6 @@
     <Content Include="Views\Shared\_SideBar.cshtml" />
     <Content Include="Views\Templates\_WikiPage.cshtml" />
     <Content Include="Views\Shared\_TopNavigation.cshtml" />
-    <Content Include="Views\Templates\_NewPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -610,6 +606,7 @@
     <TypeScriptCompile Include="Scripts\App\AppStart.ts" />
     <TypeScriptCompile Include="Scripts\App\Bootstrapper.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\NewPageController.ts" />
+    <TypeScriptCompile Include="Scripts\App\Controllers\WikiPageController.ts" />
     <TypeScriptCompile Include="Scripts\App\Infrastructure\RoutesConfig.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\DashboardController.ts" />
     <TypeScriptCompile Include="Scripts\App\Controllers\MenuController.ts" />
@@ -622,9 +619,6 @@
     <TypeScriptCompile Include="Scripts\App\Services\DashboardService.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\PagesService.ts" />
     <TypeScriptCompile Include="Scripts\App\Services\PageTypesService.ts" />
-    <TypeScriptCompile Include="Scripts\App\ViewModels\IDashboardViewModel.ts" />
-    <TypeScriptCompile Include="Scripts\App\ViewModels\IMenuViewModel.ts" />
-    <TypeScriptCompile Include="Scripts\App\ViewModels\INewPageViewModel.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-bootstrap\angular-ui-bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

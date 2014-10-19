@@ -10,7 +10,6 @@ namespace GroundControl.Web
         {
             bundles.Add(new ScriptBundle("~/bundles/groundcontrol").Include(
                         "~/Scripts/App/AppStart.js",
-                        "~/Scripts/App/ViewModels/*.js",
                         "~/Scripts/App/Models/*.js",
                         "~/Scripts/App/Api/*.js",
                         "~/Scripts/App/Services/*.js",

@@ -4,14 +4,14 @@ module GroundControl.Models {
 
     export interface IPage {
 
-        id: number;
+        Id: number;
         title: string;
         pageTypeId: number;
     }
 
     export class Page implements IPage {
 
-        id: number;
+        Id: number;
         title: string;
         pageTypeId: number;
     }

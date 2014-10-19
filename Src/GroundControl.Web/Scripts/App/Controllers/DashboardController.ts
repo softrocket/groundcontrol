@@ -1,5 +1,13 @@
 ﻿/// <reference path="../Bootstrapper.ts" />
 
+module GroundControl.Scopes {
+
+    export interface IDashboardScope extends ng.IScope {
+        dashboardItems: Array<Models.IDashboardItem>;
+    }
+
+}
+
 module GroundControl.Controllers {
 
     export class DashboardController {
@@ -10,12 +18,12 @@ module GroundControl.Controllers {
         ];
 
         private dashboardService: Services.IDashboardService;
-        private viewModel: ViewModels.IDashboardViewModel;
+        private scope: Scopes.IDashboardScope;
 
-        constructor($scope: ViewModels.IDashboardViewModel, dashboardService: Services.IDashboardService) {
+        constructor($scope: Scopes.IDashboardScope, dashboardService: Services.IDashboardService) {
 
             this.dashboardService = dashboardService;
-            this.viewModel = $scope;
+            this.scope = $scope;
 
             this.index();
         }
@@ -23,7 +31,7 @@ module GroundControl.Controllers {
         public index(): void {
 
             var widgets = this.dashboardService.getWidgets();
-            this.viewModel.dashboardItems = widgets;
+            this.scope.dashboardItems = widgets;
         }
     }
 

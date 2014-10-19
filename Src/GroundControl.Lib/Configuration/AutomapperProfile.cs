@@ -8,7 +8,9 @@ namespace GroundControl.Configuration
     {
         protected override void Configure()
         {
-            Mapper.CreateMap<WikiPage, PageDTO>();
+            Mapper.CreateMap<WikiPage, PageDTO>()
+                .ForMember(dst => dst.Author, o => o.MapFrom(src => src.Info.AuthorName))
+                .ForMember(dst => dst.Date, o => o.MapFrom(src => src.Info.PublicationDate));
         }
 
         public override string ProfileName

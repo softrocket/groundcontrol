@@ -1,5 +1,11 @@
 ﻿/// <reference path="../Bootstrapper.ts" />
+module GroundControl.Scopes {
 
+    export interface IMenuScope extends ng.IScope {
+        newPage(): void;
+    }
+}
+ 
 module GroundControl.Controllers {
 
     export class MenuController {
@@ -9,10 +15,10 @@ module GroundControl.Controllers {
             '$modal'
         ];
 
-        private scope: ViewModels.IMenuViewModel;
+        private scope: Scopes.IMenuScope;
         private modal: ng.ui.bootstrap.IModalService;
         
-        constructor($scope: ViewModels.IMenuViewModel, $modal: ng.ui.bootstrap.IModalService) {
+        constructor($scope: Scopes.IMenuScope, $modal: ng.ui.bootstrap.IModalService) {
 
             this.scope = $scope;
             this.modal = $modal;

@@ -4,7 +4,7 @@ module GroundControl.Models {
 
     export interface IPageType extends ng.resource.IResource<IPageType> {
 
-        id: number;
+        Id: number;
         name: string;
     }
 }

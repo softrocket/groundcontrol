@@ -21,10 +21,6 @@ module GroundControl.Services {
         getAll(callback: () => void) {
 
             return this.api.query(() => callback());
-
-            //return $resource('/api/PageType', {}, {
-            //    query: { method: 'GET', isArray: true }
-            //});
         }
     }
 

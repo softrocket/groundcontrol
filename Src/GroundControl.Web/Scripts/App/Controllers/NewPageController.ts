@@ -1,5 +1,19 @@
 ﻿/// <reference path="../Bootstrapper.ts" />
 
+module GroundControl.Scopes {
+
+    export interface INewPageScope extends ng.IScope {
+
+        page: Models.IPage;
+        selectedPageType: Models.IPageType;
+        pageTypes: Array<Models.IPageType>;
+
+        select(pageType: Models.IPageType): void;
+        close(): void;
+        create(pageTitle: string): void;
+    }
+}
+
 module GroundControl.Controllers {
 
     export class NewPageController {
@@ -18,10 +32,10 @@ module GroundControl.Controllers {
         private locationService: ng.ILocationService;
 
         private modal: ng.ui.bootstrap.IModalServiceInstance;
-        private viewModel: ViewModels.INewPageViewModel;
+        private scope: Scopes.INewPageScope;
         
         constructor(
-            $scope: ViewModels.INewPageViewModel,
+            $scope: Scopes.INewPageScope,
             $modalInstance: ng.ui.bootstrap.IModalServiceInstance,
             $location: ng.ILocationService,
             pageTypesService: Services.IPageTypeService,
@@ -31,7 +45,7 @@ module GroundControl.Controllers {
             this.pagesService = pagesService;
             this.locationService = $location;
 
-            this.viewModel = $scope;
+            this.scope = $scope;
             this.modal = $modalInstance;
             this.registerEvents($scope, $modalInstance);
 
@@ -40,34 +54,31 @@ module GroundControl.Controllers {
 
         public index() {
 
-            this.viewModel.pageTypes = this.pageTypesService.getAll(() => {
+            this.scope.page = new Models.Page();
+            this.scope.pageTypes = this.pageTypesService.getAll(() => {
                 
-                this.viewModel.selectedPageType = this.viewModel.pageTypes[0];
+                this.scope.selectedPageType = this.scope.pageTypes[0];
             });
         }
 
         public select = (pageType: Models.IPageType): void => {
 
-            this.viewModel.selectedPageType = pageType;
+            this.scope.selectedPageType = pageType;
         }
         
         public create = (): void => {
 
-            var xx = this.viewModel.pageTitle;
-            var y = this.viewModel.selectedPageType;
-
-
             this.pagesService.createPage(
-                this.viewModel.pageTitle,
-                this.viewModel.selectedPageType,
-                (savedPage) => {
+                this.scope.page,
+                this.scope.selectedPageType,
+                (savedPage: Models.IPage) => {
                     this.modal.close();
-                    this.locationService.path("/page/" + savedPage.id);
+                    this.locationService.path("/page/" + savedPage.Id);
                 });
             
         }
 
-        private registerEvents(viewModel: ViewModels.INewPageViewModel, modal: ng.ui.bootstrap.IModalServiceInstance) {
+        private registerEvents(viewModel: Scopes.INewPageScope, modal: ng.ui.bootstrap.IModalServiceInstance) {
 
             viewModel.select = this.select;
             viewModel.close = modal.close;
