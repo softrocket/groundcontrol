@@ -12,7 +12,7 @@ module GroundControl.Infrastructure {
 
             $routeProvider.
                 when('/dashboard', {
-                    templateUrl: 'dashboard.html',
+                    templateUrl: '/App/Views/dashboard.html',
                     controller: 'DashboardController'
                 }).
                 when('/page/:pageId', {

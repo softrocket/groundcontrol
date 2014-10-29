@@ -9,13 +9,13 @@ namespace GroundControl.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/groundcontrol").Include(
-                        "~/Scripts/App/AppStart.js",
-                        "~/Scripts/App/Models/*.js",
-                        "~/Scripts/App/Api/*.js",
-                        "~/Scripts/App/Services/*.js",
-                        "~/Scripts/App/Controllers/*.js",
-                        "~/Scripts/App/Infrastructure/*.js",
-                        "~/Scripts/App/Bootstrapper.js"));
+                        "~/App/AppStart.js",
+                        "~/App/Models/*.js",
+                        "~/App/Api/*.js",
+                        "~/App/Services/*.js",
+                        "~/App/Controllers/*.js",
+                        "~/App/Infrastructure/*.js",
+                        "~/App/Bootstrapper.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));

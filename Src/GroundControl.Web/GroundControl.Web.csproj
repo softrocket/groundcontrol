@@ -237,7 +237,7 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\App\bak\gc.bootstrap.js" />
+    <Content Include="App\bak\gc.bootstrap.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\errors.json" />
@@ -544,7 +544,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="ngViews\NewPage\modal.html" />
+    <Content Include="App\Views\dashboard.html" />
+    <Content Include="App\Views\newpagemodal.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -603,22 +604,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\App\AppStart.ts" />
-    <TypeScriptCompile Include="Scripts\App\Bootstrapper.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\NewPageController.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\WikiPageController.ts" />
-    <TypeScriptCompile Include="Scripts\App\Infrastructure\RoutesConfig.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\DashboardController.ts" />
-    <TypeScriptCompile Include="Scripts\App\Controllers\MenuController.ts" />
-    <TypeScriptCompile Include="Scripts\App\Models\IDashboardItem.ts" />
-    <TypeScriptCompile Include="Scripts\App\Models\IPage.ts" />
-    <TypeScriptCompile Include="Scripts\App\Models\IPageType.ts" />
-    <TypeScriptCompile Include="Scripts\App\Api\PagesApi.ts" />
-    <TypeScriptCompile Include="Scripts\App\Api\DashboardApi.ts" />
-    <TypeScriptCompile Include="Scripts\App\Api\PageTypesApi.ts" />
-    <TypeScriptCompile Include="Scripts\App\Services\DashboardService.ts" />
-    <TypeScriptCompile Include="Scripts\App\Services\PagesService.ts" />
-    <TypeScriptCompile Include="Scripts\App\Services\PageTypesService.ts" />
+    <TypeScriptCompile Include="App\AppStart.ts" />
+    <TypeScriptCompile Include="App\Bootstrapper.ts" />
+    <TypeScriptCompile Include="App\Controllers\NewPageController.ts" />
+    <TypeScriptCompile Include="App\Controllers\WikiPageController.ts" />
+    <TypeScriptCompile Include="App\Infrastructure\RoutesConfig.ts" />
+    <TypeScriptCompile Include="App\Controllers\DashboardController.ts" />
+    <TypeScriptCompile Include="App\Controllers\MenuController.ts" />
+    <TypeScriptCompile Include="App\Models\IDashboardItem.ts" />
+    <TypeScriptCompile Include="App\Models\IPage.ts" />
+    <TypeScriptCompile Include="App\Models\IPageType.ts" />
+    <TypeScriptCompile Include="App\Api\PagesApi.ts" />
+    <TypeScriptCompile Include="App\Api\DashboardApi.ts" />
+    <TypeScriptCompile Include="App\Api\PageTypesApi.ts" />
+    <TypeScriptCompile Include="App\Services\DashboardService.ts" />
+    <TypeScriptCompile Include="App\Services\PagesService.ts" />
+    <TypeScriptCompile Include="App\Services\PageTypesService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-bootstrap\angular-ui-bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

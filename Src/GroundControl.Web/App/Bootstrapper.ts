@@ -1,7 +1,7 @@
-﻿/// <reference path="../typings/angularjs/angular.d.ts" />
-/// <reference path="../typings/angularjs/angular-route.d.ts" />
-/// <reference path="../typings/angularjs/angular-resource.d.ts" />
-/// <reference path="../typings/angular-ui-bootstrap/angular-ui-bootstrap.d.ts" /> 
+﻿/// <reference path="../Scripts/typings/angularjs/angular.d.ts" />
+/// <reference path="../Scripts/typings/angularjs/angular-route.d.ts" />
+/// <reference path="../Scripts/typings/angularjs/angular-resource.d.ts" />
+/// <reference path="../Scripts/typings/angular-ui-bootstrap/angular-ui-bootstrap.d.ts" /> 
 
 /// <reference path="AppStart.ts" />
 /// <reference path="Infrastructure/RoutesConfig.ts" />

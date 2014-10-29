@@ -29,7 +29,7 @@ module GroundControl.Controllers {
         public newPage = (): void => {
 
             this.modal.open({
-                templateUrl: 'ngViews/NewPage/modal.html',
+                templateUrl: '/App/Views/newpagemodal.html',
                 controller: 'NewPageController',
                 size: 'lg'
             });
